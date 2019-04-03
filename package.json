@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "jwt": "^0.2.0",
+    "nodemon": "^1.18.10",
+    "sqlite3": "^4.0.6"
+  },
+  "name": "webauth-iii-challenge",
+  "version": "1.0",
+  "description": "\"Web Auth Challenge\"",
+  "main": "nodemon",
+  "repository": "https://github.com/fncischen/webauth-iii-challenge.git",
+  "author": "Francis Chen <fncis.chen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
