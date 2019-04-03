@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-session-knex": "^1.4.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "global": "^4.3.2",
     "jwt": "^0.2.0",
     "knex": "^0.16.3",
@@ -10,7 +13,7 @@
   "name": "webauth-iii-challenge",
   "version": "1.0",
   "description": "\"Web Auth Challenge\"",
-  "main": "nodemon",
+  "main": "index.js",
   "repository": "https://github.com/fncischen/webauth-iii-challenge.git",
   "author": "Francis Chen <fncis.chen@gmail.com>",
   "license": "MIT",
