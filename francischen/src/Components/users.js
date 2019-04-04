@@ -10,8 +10,10 @@ export default class Users extends Component  {
         }
     }
 
+    // https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/history.md
     onSignOut = e => {
-        
+        localStorage.removeItem("token");
+        this.props.history.replace("/");
     }
 
     componentDidMount() {

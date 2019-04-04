@@ -20,7 +20,10 @@ export default class SignIn extends Component {
         }
 
         axios.post(`https://localhost:5000/api/login`, { user })
-        .then(() => this.props.history.push("/users"))
+        .then(() => {
+            localStorage.setItem("token", res.data.token);
+            this.props.history.push("/users");
+        })
         .catch(err => console.log(err));
     }
 
