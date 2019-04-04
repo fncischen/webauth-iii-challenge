@@ -2,6 +2,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-session-knex": "^1.4.0",
+    "create-react-app": "^2.1.8",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "global": "^4.3.2",
