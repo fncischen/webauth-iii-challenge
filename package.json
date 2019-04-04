@@ -5,6 +5,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "global": "^4.3.2",
+    "jsonwebtoken": "^8.5.1",
     "jwt": "^0.2.0",
     "knex": "^0.16.3",
     "nodemon": "^1.18.10",
