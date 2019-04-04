@@ -17,9 +17,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <nav>
+        <Link to="/">Home</Link>
+        <Link to="/signin">Sign In</Link>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/users">Users</Link>
+        </nav>
+
+
         <Route path="/" exact Component={Home}/>
         <Route path="/signin" exact Component={SignIn}/>
         <Route path="/signup" exact Component={SignUp}/>
+        
         <Route path="/users" exact Component={Users}/>
       </div>
     );

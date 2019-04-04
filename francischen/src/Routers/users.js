@@ -5,7 +5,7 @@ import axios from 'axios';
 const Users = () => {
     return(
         <div className="Users">
-        
+            Welcome to the restricted users section!
         </div>
     )
 }
