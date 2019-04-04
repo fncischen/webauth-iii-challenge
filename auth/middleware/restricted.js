@@ -12,6 +12,6 @@ module.exports = function restricted(req, res, next) {
         jwt.verify(token, 'MY_SECRET_KEY'); 
     }
     else {
-        res.status(500).json({errorMessage: "There was an error in making the server request."})
+        res.status(500).json({errorMessage: "You need a token to access this database"})
     }
 }
