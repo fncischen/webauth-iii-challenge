@@ -44,13 +44,17 @@ router.post("/login", (req,res) => {
 
             if(a_user && bcrypt.compareSync(password, a_user.password)) 
             {
-                req.session.session_name =  a_user.username;
-                req.session.userid = a_user.userid;
-                console.log(req.session);
-                res.send({message: "We've logged in."});
+                // req.session.session_name =  a_user.username;
+                // req.session.userid = a_user.userid;
+                // console.log(req.session);
+                const token = generateToken(a_user)
+                res.status(200).json({message: `Welcome ${a_user.username}`,
+                token})
+
+                // res.send({message: "We've logged in."});
             }
             else {
-                res.status(401).json({message: 'Invalid Credentials'});
+                res.status(500).json({message: 'Invalid Credentials'});
             }
 
 
@@ -58,7 +62,7 @@ router.post("/login", (req,res) => {
         
     )
     .catch(error => {
-        res.status(500).json({errorMessage: "We had trouble retrieving the user you wanted."})
+        res.status(401).json({errorMessage: "We had trouble retrieving the user you wanted."})
     })
     
 })
