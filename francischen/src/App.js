@@ -3,10 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {SignIn} from "./Routers/signin.js";
-import {SignUp} from "./Routers/signup.js";
-import {Users} from "./Routers/users.js";
-import {Home} from "./Routers/home.js";
+
+import {SignIn} from "./Components/signin.js";
+import {SignUp} from "./Components/signup.js";
+import {Users} from "./Components/users.js";
+import {Home} from "./Components/home.js";
 
 class App extends Component {
 
