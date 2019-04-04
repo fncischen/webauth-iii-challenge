@@ -19,7 +19,7 @@ export default class SignIn extends Component {
             password: this.state.password
         }
 
-        axios.post(`https://localhost:5000/api/register`, { user })
+        axios.post(`https://localhost:5000/api/login`, { user })
         .then(() => this.props.history.push("/users"))
         .catch(err => console.log(err));
     }
