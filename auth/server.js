@@ -1,6 +1,9 @@
 const bcrypt = require("bcryptjs");
 const router = require("express").Router();
 
+let jwt = require('jsonwebtoken');
+let config = require('./config');
+let middleware = require('./middleware');
 
 const Users = require("../data/users/usersDataModel.js");
 
@@ -69,15 +72,33 @@ router.get("/users", restricted,(req,res) => {
 })
 
 function restricted(req, res, next) {
-    console.log(req.session);
-    if (req.session && req.session.session_name)
+    // console.log(req.session);
+
+    const token = req.headers.authorization; 
+
+    if (token)
+    // if (req.session && req.session.session_name)
     // if (username && password) {
     {
-        next();
+        jwt.verify(token, secret); 
     }
     else {
         res.status(500).json({errorMessage: "There was an error in making the server request."})
     }
+}
+
+function generateToken(user) {
+    const payload = {
+        subject: user.id,
+        username: user.username,
+    };
+
+    const secret = 'MY_SECRET_KEY';
+    const options = {
+        expiresIn = "1d",
+    };
+
+    return jwt.sign(payload, secret, options); 
 }
 
 module.exports = router; 
